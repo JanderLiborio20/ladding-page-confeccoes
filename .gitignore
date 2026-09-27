@@ -14,7 +14,7 @@
 /coverage
 
 # next.js
-/.next/
+/.next
 /out/
 
 # production
@@ -43,3 +43,7 @@ next-env.d.ts
 # material original (fotos enviadas pelo cliente, já copiadas para /public)
 /WhatsApp Unknown*/
 /ChatGPT Image*.png
+
+# pastas fora da sincronizacao do iCloud (node_modules e .next sao links para elas)
+/node_modules.nosync
+/.next.nosync
