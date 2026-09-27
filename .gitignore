@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# material original (fotos enviadas pelo cliente, já copiadas para /public)
+/WhatsApp Unknown*/
+/ChatGPT Image*.png
