@@ -2,22 +2,12 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { localBusinessJsonLd } from "@/lib/business";
+import { localBusinessJsonLd, siteUrl } from "@/lib/business";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
-/**
- * Base para as URLs absolutas do Open Graph. Sem isso, a imagem de preview
- * não carrega quando alguém compartilha o link no WhatsApp ou no Instagram.
- * Na Vercel, VERCEL_PROJECT_PRODUCTION_URL traz o domínio de produção;
- * trocar por uma URL fixa quando houver domínio próprio.
- */
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

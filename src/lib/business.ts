@@ -40,6 +40,15 @@ export const business = {
   ],
 } as const;
 
+/**
+ * URL pública do site, base para Open Graph, sitemap e robots.
+ * Na Vercel, VERCEL_PROJECT_PRODUCTION_URL traz o domínio de produção.
+ * Trocar por uma URL fixa quando houver domínio próprio.
+ */
+export const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
 /** Mensagem pré-preenchida ao abrir a conversa no WhatsApp. */
 export const whatsappUrl = `https://wa.me/${business.phone.whatsapp}?text=${encodeURIComponent(
   "Olá! Vim pelo site e gostaria de solicitar um orçamento."
@@ -74,7 +83,8 @@ export const localBusinessJsonLd = {
   slogan: business.tagline,
   telephone: business.phone.tel,
   email: business.email,
-  image: "/images/logo.png",
+  image: `${siteUrl}/images/logo.png`,
+  url: siteUrl,
   address: {
     "@type": "PostalAddress",
     streetAddress: business.address.street,
