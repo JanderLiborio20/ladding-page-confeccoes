@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Fora da sincronizacao do iCloud; node_modules e .next apontam para ca.
+    "node_modules.nosync/**",
+    ".next.nosync/**",
   ]),
 ]);
 
